@@ -59,6 +59,21 @@
   <exec_depend>rospy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
 
+  <build_depend>diagnostic_updater</build_depend>
+  <build_export_depend>diagnostic_updater</build_export_depend>
+
+  <build_depend>dynamic_reconfigure</build_depend>
+  <build_export_depend>dynamic_reconfigure</build_export_depend>
+
+  <build_depend>nodelet</build_depend>
+  <build_export_depend>nodelet</build_export_depend>
+
+  <build_depend>tf</build_depend>
+  <build_export_depend>tf</build_export_depend>
+
+  <build_depend>velodyne_msgs</build_depend>
+  <build_export_depend>velodyne_msgs</build_export_depend>
+
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
