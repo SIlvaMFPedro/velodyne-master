@@ -166,4 +166,3 @@ int main(int argc, char **argv)
     init_global_data();
     return RUN_ALL_TESTS();
 }
-

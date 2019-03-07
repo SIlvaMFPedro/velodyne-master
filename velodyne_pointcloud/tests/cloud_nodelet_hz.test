@@ -1,8 +1,6 @@
 <!-- -*- mode: XML -*- -->
 <!-- rostest of publishing a PointCloud from PCAP data.
-
      Uses rostest, because a running roscore is required.
-
      $Id$
   -->
 
