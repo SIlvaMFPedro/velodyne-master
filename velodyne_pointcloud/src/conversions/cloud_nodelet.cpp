@@ -20,7 +20,7 @@
 #include <ros/ros.h>
 #include <pluginlib/class_list_macros.h>
 #include <nodelet/nodelet.h>
-#include <convert.h>
+#include "../../include/velodyne_pointcloud/convert.h"
 
 namespace velodyne_pointcloud
 {

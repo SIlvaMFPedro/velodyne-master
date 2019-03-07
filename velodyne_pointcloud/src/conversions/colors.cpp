@@ -19,7 +19,7 @@
 */
 
 // System Includes
-#include "colors.h"
+#include "../../include/velodyne_pointcloud/colors.h"
 #include <velodyne_pointcloud/point_types.h>
 #include <pcl-1.8/pcl/io/pcd_io.h>
 #include <pcl-1.8/pcl/point_cloud.h>

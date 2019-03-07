@@ -22,7 +22,7 @@
 */
 
 // System Includes
-#include "transform.h"
+#include "../../include/velodyne_pointcloud/transform.h"
 #include <pcl_conversions/pcl_conversions.h>
 
 namespace velodyne_pointcloud

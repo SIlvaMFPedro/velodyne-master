@@ -24,7 +24,7 @@
 #define PROJECT_POINT_TYPES_H
 
 // System Includes
-#include <pcl/point_types.h>
+#include <pcl-1.8/pcl/point_types.h>
 
 namespace velodyne_pointcloud
 {
@@ -39,11 +39,12 @@ namespace velodyne_pointcloud
 
 }; // namespace velodyne_pointcloud
 
+
 POINT_CLOUD_REGISTER_POINT_STRUCT(velodyne_pointcloud::PointXYZIR,
-                                    (float, x, x)
-                                    (float, y, y)
-                                    (float, z, z)
-                                    (float, intensity, intensity)
-                                    (uint16_t, ring, ring))
+                                  (float, x, x)
+                                          (float, y, y)
+                                          (float, z, z)
+                                          (float, intensity, intensity)
+                                          (uint16_t, ring, ring))
 
 #endif //PROJECT_POINT_TYPES_H

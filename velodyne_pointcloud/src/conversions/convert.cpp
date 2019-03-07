@@ -18,7 +18,7 @@
 */
 
 // System Includes
-#include "convert.h"
+#include "../../include/velodyne_pointcloud/convert.h"
 #include <pcl_conversions/pcl_conversions.h>
 
 namespace velodyne_pointcloud

@@ -18,7 +18,7 @@
 
 // System Includes
 #include <ros/ros.h>
-#include "transform.h"
+#include "../../include/velodyne_pointcloud/transform.h"
 
 /** Main node entry point. */
 int main(int argc, char **argv)

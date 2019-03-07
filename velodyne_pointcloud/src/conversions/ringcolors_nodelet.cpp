@@ -21,7 +21,7 @@
 #include <ros/ros.h>
 #include <pluginlib/class_list_macros.h>
 #include <nodelet/nodelet.h>
-#include "colors.h"
+#include "../../include/velodyne_pointcloud/colors.h"
 
 namespace velodyne_pointcloud
 {

@@ -17,7 +17,7 @@
 
 // System Includes
 #include <ros/ros.h>
-#include <convert.h>
+#include "../../include/velodyne_pointcloud/convert.h"
 
 /** Main node entry point. */
 int main(int argc, char **argv)
