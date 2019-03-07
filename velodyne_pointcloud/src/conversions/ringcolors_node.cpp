@@ -19,7 +19,7 @@
 
 // System Includes
 #include <ros/ros.h>
-#include "../../include/velodyne_pointcloud/colors.h"
+#include "velodyne_pointcloud/colors.h"
 
 /** Main node entry point. */
 int main(int argc, char **argv)

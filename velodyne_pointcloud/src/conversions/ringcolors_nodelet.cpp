@@ -21,7 +21,7 @@
 #include <ros/ros.h>
 #include <pluginlib/class_list_macros.h>
 #include <nodelet/nodelet.h>
-#include "../../include/velodyne_pointcloud/colors.h"
+#include "velodyne_pointcloud/colors.h"
 
 namespace velodyne_pointcloud
 {
@@ -47,7 +47,7 @@ namespace velodyne_pointcloud
 } // namespace velodyne_pointcloud
 
 
-// Register this plugin with pluginlib.  Names must match nodelet_velodyne.xml.
+// Register this plugin with pluginlib.  Names must match nodelets.xml.
 //
-// parameters: package, class name, class type, base class type
-PLUGINLIB_DECLARE_CLASS(velodyne_pointcloud, RingColorsNodelet, velodyne_pointcloud::RingColorsNodelet, nodelet::Nodelet);
+// parameters: class type, base class type
+PLUGINLIB_EXPORT_CLASS(velodyne_pointcloud::RingColorsNodelet, nodelet::Nodelet)
