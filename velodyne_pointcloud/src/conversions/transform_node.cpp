@@ -18,7 +18,7 @@
 
 // System Includes
 #include <ros/ros.h>
-#include "../../include/velodyne_pointcloud/transform.h"
+#include "velodyne_pointcloud/transform.h"
 
 /** Main node entry point. */
 int main(int argc, char **argv)
@@ -26,7 +26,8 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "transform_node");
 
     // create conversion class, which subscribes to raw data
-    velodyne_pointcloud::Transform transform(ros::NodeHandle(), ros::NodeHandle("~"));
+    velodyne_pointcloud::Transform transform(ros::NodeHandle(),
+                                             ros::NodeHandle("~"));
 
     // handle callbacks until shut down
     ros::spin();
