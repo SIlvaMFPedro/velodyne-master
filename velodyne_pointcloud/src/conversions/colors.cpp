@@ -19,7 +19,7 @@
 */
 
 // System Includes
-#include "../../include/velodyne_pointcloud/colors.h"
+#include "velodyne_pointcloud/colors.h"
 #include <velodyne_pointcloud/point_types.h>
 #include <pcl-1.8/pcl/io/pcd_io.h>
 #include <pcl-1.8/pcl/point_cloud.h>
@@ -62,8 +62,7 @@ namespace velodyne_pointcloud
 
 
     /** @brief Callback for Velodyne PointXYZRI messages. */
-    void
-    RingColors::convertPoints(const VPointCloud::ConstPtr &inMsg)
+    void RingColors::convertPoints(const VPointCloud::ConstPtr &inMsg)
     {
         if (output_.getNumSubscribers() == 0)         // no one listening?
             return;                                     // do nothing
