@@ -11,10 +11,20 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  angles
+  pcl_ros
+  roslib
+  sensor_msgs
+  tf
+  velodyne_driver
+  velodyne_msgs
+  dynamic_reconfigure
 )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
+find_package(catkin REQUIRED COMPONENTS ${${PROJECT_NAME}_CATKIN_DEPS} pcl_conversions)
+find_package(Boost COMPONENTS signals)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -88,10 +98,10 @@ find_package(catkin REQUIRED COMPONENTS
 ##     and list every .cfg file to be processed
 
 ## Generate dynamic reconfigure parameters in the 'cfg' folder
-# generate_dynamic_reconfigure_options(
-#   cfg/DynReconf1.cfg
-#   cfg/DynReconf2.cfg
-# )
+generate_dynamic_reconfigure_options(
+   cfg/CloudNode.cfg
+   cfg/TransformNode.cfg
+)
 
 ###################################
 ## catkin specific configuration ##
@@ -103,9 +113,9 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES velodyne_pointcloud
-#  CATKIN_DEPENDS roscpp rospy std_msgs
+  INCLUDE_DIRS include
+  LIBRARIES velodyne_rawdata
+  CATKIN_DEPENDS roscpp rospy std_msgs angles nodelet pcl_ros roslib sensor_msgs tf velodyne_driver velodyne_msgs dynamic_reconfigure
 #  DEPENDS system_lib
 )
 
@@ -197,3 +207,22 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_subdirectory(src/lib)
+add_subdirectory(src/conversions)
+
+install(DIRECTORY include/${PROJECT_NAME}/
+        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
+install(FILES nodelets.xml
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(DIRECTORY launch/
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch)
+install(DIRECTORY params/
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/params)
+install(PROGRAMS scripts/gen_calibration.py
+        DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
+
+if (CATKIN_ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()

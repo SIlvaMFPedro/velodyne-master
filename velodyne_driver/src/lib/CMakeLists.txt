@@ -1,4 +1,4 @@
-add_library(velodyne_input input.cc)
+add_library(velodyne_input input.cpp)
 target_link_libraries(velodyne_input
         ${catkin_LIBRARIES}
         ${libpcap_LIBRARIES}
